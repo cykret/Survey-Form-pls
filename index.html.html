@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Snack Request</title>
+<style>
+:root{--ink:#26362e;--muted:#68766e;--green:#47745e;--green-dark:#315542;--cream:#fbf8f0;--line:#dfe7dd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:26px 15px 44px;background:radial-gradient(circle at 8% 0%,#e7f0e4 0,transparent 32%),var(--cream);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+.wrap{width:min(100%,740px);margin:auto}
+header{padding:18px 4px 24px}
+.tag{display:inline-block;background:#e3ede1;color:var(--green-dark);border-radius:99px;padding:7px 11px;font-size:.75rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+h1{font:600 clamp(2.2rem,7vw,3.4rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:17px 0 12px}
+header p{max-width:550px;color:var(--muted);line-height:1.65;margin:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 50px #273d2d0c}
+.section{font-size:.76rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--green);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.wide{grid-column:1/-1}
+label,legend{font-size:.9rem;font-weight:700}
+.req{color:#b64d3d}
+input,textarea,select{width:100%;border:1px solid #d5ded5;border-radius:12px;background:#fff;color:var(--ink);padding:13px 14px;font:inherit;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--green);box-shadow:0 0 0 3px #47745e20}
+textarea{min-height:82px;resize:vertical}
+.hint{color:var(--muted);font-size:.79rem;line-height:1.45}
+fieldset{border:0;padding:0;margin:27px 0 0}
+.snacks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.snack{position:relative}
+.snack input{position:absolute;opacity:0;width:1px;height:1px}
+.snack label{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:13px 12px;min-height:50px;cursor:pointer;font-size:.88rem;font-weight:600}
+.snack label span{font-size:1.25rem}
+.snack input:checked+label{border-color:var(--green);background:#edf4eb;box-shadow:inset 0 0 0 1px var(--green)}
+.snack input:focus-visible+label{outline:3px solid #47745e50;outline-offset:2px}
+.rule{height:1px;background:var(--line);margin:28px 0 24px}
+button{width:100%;border:0;border-radius:13px;padding:15px 18px;background:var(--green);color:white;font:700 1rem inherit;font-size:1rem;font-weight:750;cursor:pointer;transition:background .15s,transform .15s}
+button:hover{background:var(--green-dark);transform:translateY(-1px)}
+button:focus-visible{outline:3px solid #47745e55;outline-offset:3px}
+.privacy{font-size:.78rem;color:var(--muted);line-height:1.55;margin:14px 0 0}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:18px 8px 0}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.snacks{grid-template-columns:1fr 1fr}}
+@media(max-width:360px){.snacks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <span class="tag">A little fuel for review</span>
+    <h1>Review Snack Request</h1>
+    <p>Help us plan your review snacks! Fill out the details below so we can prepare something you’ll enjoy.</p>
+  </header>
+  <section class="card">
+    <form action="https://formsubmit.co/giftbalacuit@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Review Snack Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <p class="section">Your details</p>
+      <div class="grid">
+        <div class="field wide">
+          <label for="name">Full name <span class="req">*</span></label>
+          <input id="name" name="Full name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+        <div class="field wide">
+          <label for="address">Present address <span class="req">*</span></label>
+          <textarea id="address" name="Present address" placeholder="House/building, street, barangay, city/municipality" autocomplete="street-address" required></textarea>
+        </div>
+        <div class="field">
+          <label for="contact">Contact number <span class="req">*</span></label>
+          <input id="contact" name="Contact number" type="tel" placeholder="e.g. 09XX XXX XXXX" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="field">
+          <label for="date">Preferred snack date <span class="req">*</span></label>
+          <input id="date" name="Preferred snack date" type="date" required>
+        </div>
+        <div class="field wide">
+          <label for="time">Preferred snack time <span class="req">*</span></label>
+          <input id="time" name="Preferred snack time" type="time" required>
+          <span class="hint">Choose the time you’d like to receive your snacks.</span>
+        </div>
+      </div>
+      <fieldset>
+        <legend>Preferred review snacks <span class="req">*</span></legend>
+        <p class="hint">Select all that you’d enjoy.</p>
+        <div class="snacks">
+          <div class="snack"><input id="chips" name="Preferred snacks[]" type="checkbox" value="Chips"><label for="chips"><span>🥔</span> Chips</label></div>
+          <div class="snack"><input id="biscuits" name="Preferred snacks[]" type="checkbox" value="Biscuits or cookies"><label for="biscuits"><span>🍪</span> Biscuits / cookies</label></div>
+          <div class="snack"><input id="chocolate" name="Preferred snacks[]" type="checkbox" value="Chocolate or sweets"><label for="chocolate"><span>🍫</span> Chocolate / sweets</label></div>
+          <div class="snack"><input id="bread" name="Preferred snacks[]" type="checkbox" value="Bread or pastries"><label for="bread"><span>🥐</span> Bread / pastries</label></div>
+          <div class="snack"><input id="fruit" name="Preferred snacks[]" type="checkbox" value="Fruit"><label for="fruit"><span>🍎</span> Fruit</label></div>
+          <div class="snack"><input id="drinks" name="Preferred snacks[]" type="checkbox" value="Drinks"><label for="drinks"><span>🧃</span> Drinks</label></div>
+          <div class="snack"><input id="healthy" name="Preferred snacks[]" type="checkbox" value="Healthy snacks"><label for="healthy"><span>🥜</span> Healthy snacks</label></div>
+          <div class="snack"><input id="other" name="Preferred snacks[]" type="checkbox" value="Other"><label for="other"><span>✨</span> Other</label></div>
+        </div>
+      </fieldset>
+      <div class="field" style="margin-top:18px">
+        <label for="notes">Other snack requests or notes <span class="hint">(optional)</span></label>
+        <textarea id="notes" name="Other snack requests or notes" placeholder="Specific snack, flavor, allergies, or other requests"></textarea>
+      </div>
+      <div class="rule"></div>
+      <button type="submit">Submit snack request →</button>
+      <p class="privacy">Your responses will be sent to the form organizer by email. Please enter only information needed to coordinate your snack request.</p>
+    </form>
+  </section>
+  <footer>Thanks for sharing your snack preferences ☘</footer>
+</main>
+<script>
+  // Prevent selecting a past date in the browser's date picker.
+  const dateInput = document.getElementById('date');
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+  dateInput.min = localToday;
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(event) {
+    const selected = document.querySelectorAll('input[name="Preferred snacks[]"]:checked');
+    if (!selected.length) {
+      event.preventDefault();
+      alert('Please select at least one preferred snack.');
+      document.getElementById('chips').focus();
+    }
+  });
+</script>
+</body>
+</html>
